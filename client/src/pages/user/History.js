@@ -4,8 +4,8 @@ import { getUserOrders } from "../../functions/user";
 import { useSelector } from "react-redux";
 import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import ShowPaymentInfo from "../../components/cards/ShowPaymentInfo";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import Invoice from "../../components/order/Invoice";
+// import { PDFDownloadLink } from "@react-pdf/renderer";
+// import Invoice from "../../components/order/Invoice";
 import './History.css'
 const History = () => {
   const [orders, setOrders] = useState([]);
@@ -64,15 +64,15 @@ const History = () => {
     </table>
   );
 
-  const showDownloadLink = (order) => (
-    <PDFDownloadLink
-      document={<Invoice order={order} />}
-      fileName="invoice.pdf"
-      className="btn btn-sm btn-block btn-outline-primary"
-    >
-      Download PDF
-    </PDFDownloadLink>
-  );
+  // const showDownloadLink = (order) => (
+  //   <PDFDownloadLink
+  //     document={<Invoice order={order} />}
+  //     fileName="invoice.pdf"
+  //     className="btn btn-sm btn-block btn-outline-primary"
+  //   >
+  //     Download PDF
+  //   </PDFDownloadLink>
+  // );
 
   const showEachOrders = () =>
     orders.map((order, i) => (
@@ -80,7 +80,7 @@ const History = () => {
         <ShowPaymentInfo order={order} />
         {showOrderInTable(order)}
         <div className="row">
-          <div className="col">{showDownloadLink(order)}</div>
+          {/* <div className="col">{showDownloadLink(order)}</div> */}
         </div>
       </div>
     ));
